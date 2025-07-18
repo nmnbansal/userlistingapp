@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, FlatList, StyleSheet, RefreshControl } from 'react-native';
-import { Button, Title } from 'react-native-paper';
+import { Button, Text } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsersList, resetUsers } from '../redux/slices/userSlice';
 import { logout } from '../redux/slices/authSlice';
@@ -37,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Title style={styles.title}>Users</Title>
+      <Text variant="titleLarge" style={styles.title}>Users</Text>
       <FlatList
         data={users}
         renderItem={({ item }) => <UserCard user={item} />}
@@ -47,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
         ListFooterComponent={loading && users.length > 0 ? <LoadingSpinner /> : null}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
       />
-      {error && <Title style={styles.error}>{error}</Title>}
+      {error && <Text style={styles.error}>{error}</Text>}
       <Button mode="contained" onPress={handleLogout} style={styles.button}>
         Logout
       </Button>

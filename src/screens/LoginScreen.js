@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
-import { TextInput, Button, Title } from 'react-native-paper';
+import { TextInput, Button, Text } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/slices/authSlice';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -22,7 +22,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Title style={styles.title}>Login</Title>
+      <Text variant="titleLarge" style={styles.title}>Login</Text>
       <TextInput
         label="Email"
         value={email}
@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
       <Button mode="contained" onPress={handleLogin} style={styles.button}>
         Login
       </Button>
-      {error && <Title style={styles.error}>{error}</Title>}
+      {error && <Text style={styles.error}>{error}</Text>}
     </View>
   );
 };

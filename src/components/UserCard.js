@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Card, Title, Paragraph } from 'react-native-paper';
+import { Card, Text } from 'react-native-paper';
 
 const UserCard = ({ user }) => {
   return (
     <Card style={styles.card}>
       <Card.Content>
-        <Title>{`${user.first_name} ${user.last_name}`}</Title>
-        <Paragraph>{user.email}</Paragraph>
+        <Text variant="titleMedium">{`${user.first_name} ${user.last_name}`}</Text>
+        <Text variant="bodyMedium">{user.email}</Text>
       </Card.Content>
     </Card>
   );
